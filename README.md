@@ -11,7 +11,7 @@
 ## 🦆 My debugging partner
 
 <div align="center">
-  <img src="assets/rubber-duck.svg" width="560" alt="A rubber duck in a graduation cap debugging a bug" />
+  <img src="assets/duck-eats-bug.svg" width="560" alt="A rubber duck in a graduation cap eats a bug" />
   <br />
   <sub><i>Rubber duck debugging: explain your code to the duck, line by line, until the bug confesses.</i></sub>
 </div>
