@@ -49,4 +49,12 @@
 
 <p><img src="https://img.shields.io/badge/Co--Founder-AIFA_(AI_For_All)-14866D?style=for-the-badge" alt="Co-Founder, AIFA" /> <img src="https://img.shields.io/badge/Vice_President-SIAC_Competition-7C3AED?style=for-the-badge" alt="Vice President, SIAC" /> <img src="https://img.shields.io/badge/Head_of_Operations-Gaming%2B_(6,000%2B)-E11D48?style=for-the-badge" alt="Head of Operations, Gaming+" /> <img src="https://img.shields.io/badge/PMO_Leader-TEDxKFUPM-EB0028?style=for-the-badge" alt="PMO Leader, TEDxKFUPM" /> <img src="https://img.shields.io/badge/Operations_Lead-PAMM_2025_Canada-0EA5E9?style=for-the-badge" alt="Operations Lead, PAMM 2025" /></p>
 
+## 🦆 My debugging partner
+
+<div align="center">
+  <img src="assets/rubber-duck.svg" width="560" alt="A rubber duck in a graduation cap debugging a bug" />
+  <br />
+  <sub><i>Rubber duck debugging: explain your code to the duck, line by line, until the bug confesses.</i></sub>
+</div>
+
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2EA98A,50:14866D,100:0B3D33&height=110&section=footer" width="100%" alt="" />
