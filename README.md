@@ -2,8 +2,7 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&pause=1200&color=2EA98A&center=true&vCenter=true&width=620&lines=Hi%2C+I'm+Abdelrahman+%F0%9F%91%8B;AI+Engineer+%C2%B7+App+Developer;Software+Engineering+%40+KFUPM" alt="Hi, I'm Abdelrahman" />
 
-<a href="https://www.linkedin.com/in/abdelrahman-osman1/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="mailto:abdelrahmanosman.jobs@gmail.com"><img src="https://img.shields.io/badge/Email-2EA98A?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+<a href="https://www.linkedin.com/in/abdelrahman-osman1/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;<a href="mailto:abdelrahmanosman.jobs@gmail.com"><img src="https://img.shields.io/badge/Email-2EA98A?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 
 </div>
 
