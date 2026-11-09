@@ -1,15 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" width="640" height="260" role="img" aria-label="A rubber duck debugging a bug">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" width="640" height="260" role="img" aria-label="A rubber duck eats a bug">
   <style>
-    .bob { animation: bob 2.4s ease-in-out infinite; transform-origin: 200px 180px; }
-    .wave { animation: drift 3s linear infinite; }
-    .bug { animation: flee 3.2s ease-in-out infinite; }
-    .blink { animation: blink 4s infinite; transform-origin: 236px 92px; }
-    .type { animation: type 4s steps(1) infinite; }
-    @keyframes bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
+    .bob   { animation: bob 2.4s ease-in-out infinite; transform-origin: 200px 180px; }
+    .wave  { animation: drift 3s linear infinite; }
+    .bug   { animation: bug 5s ease-in-out infinite; }
+    .legs  { animation: legs .25s steps(2) infinite; transform-origin: 0 0; }
+    .jaw   { animation: jaw 5s ease-in-out infinite; transform-origin: 274px 118px; }
+    .head  { animation: chomp 5s ease-in-out infinite; transform-origin: 236px 140px; }
+    .blink { animation: blink 4s infinite; transform-origin: 248px 92px; }
+    .nom   { animation: nom 5s ease-out infinite; }
+    .before{ animation: before 5s steps(1) infinite; }
+    .after { animation: after 5s steps(1) infinite; }
+    @keyframes bob   { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-7px) rotate(2deg); } }
     @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-80px); } }
-    @keyframes flee { 0%,100% { transform: translate(0,0); } 50% { transform: translate(18px,-6px); } }
-    @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
-    @keyframes type { 0% { opacity: 0; } 25%,100% { opacity: 1; } }
+    /* bug: wanders on the water, gets snatched to the beak, disappears */
+    @keyframes bug {
+      0%   { transform: translate(60px, 0) scale(1);   opacity: 1; }
+      30%  { transform: translate(10px, -4px) scale(1); opacity: 1; }
+      45%  { transform: translate(0, 0) scale(1);       opacity: 1; }
+      58%  { transform: translate(-30px, -70px) scale(.8); opacity: 1; }
+      62%  { transform: translate(-34px, -72px) scale(0); opacity: 0; }
+      100% { transform: translate(-34px, -72px) scale(0); opacity: 0; }
+    }
+    @keyframes legs  { 0% { transform: rotate(-12deg); } 100% { transform: rotate(12deg); } }
+    @keyframes jaw   { 0%,44% { transform: rotate(0); } 52%,58% { transform: rotate(28deg); } 62%,66% { transform: rotate(0); } 70% { transform: rotate(14deg); } 74%,100% { transform: rotate(0); } }
+    @keyframes chomp { 0%,58% { transform: rotate(0); } 63% { transform: rotate(-6deg); } 68% { transform: rotate(3deg); } 74%,100% { transform: rotate(0); } }
+    @keyframes blink { 0%,92%,100% { transform: scaleY(1); } 95% { transform: scaleY(.1); } }
+    @keyframes nom   { 0%,60% { opacity: 0; transform: translate(0,0); } 64% { opacity: 1; } 85% { opacity: 1; transform: translate(6px,-14px); } 95%,100% { opacity: 0; transform: translate(8px,-20px); } }
+    @keyframes before{ 0% { opacity: 1; } 62%,100% { opacity: 0; } }
+    @keyframes after { 0% { opacity: 0; } 62%,100% { opacity: 1; } }
   </style>
 
   <!-- water -->
@@ -18,30 +36,34 @@
     <path d="M0 226 q20 -8 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 V260 H0 Z" fill="#2EA98A" opacity=".45"/>
   </g>
 
-  <!-- duck -->
   <g class="bob">
+    <!-- body -->
     <ellipse cx="190" cy="178" rx="88" ry="46" fill="#FFD43B"/>
     <path d="M110 170 q-26 -6 -30 -30 q22 10 40 8 z" fill="#FFD43B"/>
     <ellipse cx="182" cy="176" rx="40" ry="22" fill="#F5B400"/>
-    <circle cx="236" cy="104" r="44" fill="#FFD43B"/>
-    <path d="M272 108 q34 -4 40 10 q-14 16 -42 8 z" fill="#FF8A00"/>
-    <path d="M272 118 q24 6 36 2" stroke="#E06F00" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <g class="blink"><ellipse cx="248" cy="92" rx="7" ry="9" fill="#1F2933"/><circle cx="250" cy="89" r="2.5" fill="#fff"/></g>
-    <ellipse cx="226" cy="114" rx="9" ry="5" fill="#FF9AA2" opacity=".6"/>
-    <!-- graduation-style coder cap -->
-    <path d="M196 66 l40 -16 l40 16 l-40 16 z" fill="#1F2933"/>
-    <rect x="216" y="70" width="40" height="12" rx="3" fill="#1F2933"/>
-    <path d="M276 66 v22" stroke="#C39A3C" stroke-width="3"/><circle cx="276" cy="90" r="4" fill="#C39A3C"/>
-  </g>
 
-  <!-- the bug, trying to escape -->
-  <g class="bug">
+    <!-- head -->
+    <g class="head">
+      <circle cx="236" cy="104" r="44" fill="#FFD43B"/>
+      <path class="jaw" d="M272 117 l38 1 q-12 15 -38 9 z" fill="#E87A00"/>
+      <path d="M272 108 q34 -4 40 10 l-40 0 z" fill="#FF8A00"/>
+      <g class="blink"><ellipse cx="248" cy="92" rx="7" ry="9" fill="#1F2933"/><circle cx="250" cy="89" r="2.5" fill="#fff"/></g>
+      <ellipse cx="226" cy="114" rx="9" ry="5" fill="#FF9AA2" opacity=".6"/>
+      <path d="M196 66 l40 -16 l40 16 l-40 16 z" fill="#1F2933"/>
+      <rect x="216" y="70" width="40" height="12" rx="3" fill="#1F2933"/>
+      <path d="M276 66 v22" stroke="#C39A3C" stroke-width="3"/><circle cx="276" cy="90" r="4" fill="#C39A3C"/>
+      <text class="nom" x="316" y="104" font-family="'Fira Code','SF Mono',Menlo,monospace" font-size="16" font-weight="700" fill="#FFD43B">nom!</text>
+    </g>
+
+    <!-- the bug (rides along with the duck's bobbing so the snatch lines up) -->
     <g transform="translate(330 190)">
-      <ellipse cx="0" cy="0" rx="13" ry="10" fill="#E5484D"/>
-      <circle cx="-14" cy="-2" r="6" fill="#1F2933"/>
-      <path d="M0 -10 v20" stroke="#1F2933" stroke-width="2"/>
-      <circle cx="-5" cy="-3" r="2" fill="#1F2933"/><circle cx="5" cy="4" r="2" fill="#1F2933"/>
-      <path d="M-8 9 l-5 7 M0 10 v8 M8 9 l5 7 M-8 -9 l-5 -7 M8 -9 l5 -7" stroke="#1F2933" stroke-width="2" stroke-linecap="round"/>
+      <g class="bug">
+        <g class="legs"><path d="M-8 9 l-5 7 M0 10 v8 M8 9 l5 7 M-8 -9 l-5 -7 M8 -9 l5 -7" stroke="#1F2933" stroke-width="2" stroke-linecap="round"/></g>
+        <ellipse cx="0" cy="0" rx="13" ry="10" fill="#E5484D"/>
+        <circle cx="-14" cy="-2" r="6" fill="#1F2933"/>
+        <path d="M0 -10 v20" stroke="#1F2933" stroke-width="2"/>
+        <circle cx="-5" cy="-3" r="2" fill="#1F2933"/><circle cx="5" cy="4" r="2" fill="#1F2933"/>
+      </g>
     </g>
   </g>
 
@@ -50,6 +72,7 @@
     <path d="M360 26 h250 a16 16 0 0 1 16 16 v86 a16 16 0 0 1 -16 16 h-196 l-34 26 l6 -26 h-26 a16 16 0 0 1 -16 -16 v-86 a16 16 0 0 1 16 -16 z" fill="#0F1A17" stroke="#2EA98A" stroke-width="2"/>
     <text x="372" y="60" font-size="15" fill="#8EE0C2">// explain it to me</text>
     <text x="372" y="86" font-size="15" fill="#D7EFE6">line by line...</text>
-    <text class="type" x="372" y="118" font-size="16" fill="#FFD43B" font-weight="700">bug found 🐛✅ quack!</text>
+    <text class="before" x="372" y="118" font-size="16" fill="#E5484D" font-weight="700">wait... is that a bug? 👀</text>
+    <text class="after"  x="372" y="118" font-size="16" fill="#FFD43B" font-weight="700">nom. bug eaten ✅ quack!</text>
   </g>
 </svg>
